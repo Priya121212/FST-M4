@@ -1,0 +1,550 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\0686C6744> docker exec -it e1c17186afad bash
+root@e1c17186afad:/# hive
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/local/apache-hive-3.1.2-bin/lib/log4j-slf4j-impl-2.10.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/local/hadoop-3.3.1/share/hadoop/common/lib/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+Hive Session ID = 9fa90604-de49-4543-a9f1-9ee111ff33d6
+
+Logging initialized using configuration in jar:file:/usr/local/apache-hive-3.1.2-bin/lib/hive-common-3.1.2.jar!/hive-log4j2.properties Async: true
+Exception in thread "main" java.lang.RuntimeException: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot create directory /tmp/hive/root/9fa90604-de49-4543-a9f1-9ee111ff33d6. Name node is in safe mode.
+The reported blocks 155 has reached the threshold 0.9990 of total blocks 155. The minimum number of live datanodes is not required. In safe mode extension. Safe mode will be turned off automatically in 22 seconds. NamenodeHostName:e1c17186afad
+        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1570)
+        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1557)
+        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.mkdirs(FSNamesystem.java:3409)
+        at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.mkdirs(NameNodeRpcServer.java:1170)
+        at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.mkdirs(ClientNamenodeProtocolServerSideTranslatorPB.java:740)
+        at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:600)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:568)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:552)
+        at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1093)
+        at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:1035)
+        at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:963)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at javax.security.auth.Subject.doAs(Subject.java:422)
+        at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1878)
+        at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2966)
+
+        at org.apache.hadoop.hive.ql.session.SessionState.start(SessionState.java:651)
+        at org.apache.hadoop.hive.ql.session.SessionState.beginStart(SessionState.java:591)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:747)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:683)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:323)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:236)
+Caused by: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot create directory /tmp/hive/root/9fa90604-de49-4543-a9f1-9ee111ff33d6. Name node is in safe mode.
+The reported blocks 155 has reached the threshold 0.9990 of total blocks 155. The minimum number of live datanodes is not required. In safe mode extension. Safe mode will be turned off automatically in 22 seconds. NamenodeHostName:e1c17186afad
+        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1570)
+        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1557)
+        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.mkdirs(FSNamesystem.java:3409)
+        at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.mkdirs(NameNodeRpcServer.java:1170)
+        at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.mkdirs(ClientNamenodeProtocolServerSideTranslatorPB.java:740)
+        at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:600)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:568)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:552)
+        at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1093)
+        at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:1035)
+        at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:963)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at javax.security.auth.Subject.doAs(Subject.java:422)
+        at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1878)
+        at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2966)
+
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at org.apache.hadoop.ipc.RemoteException.instantiateException(RemoteException.java:121)
+        at org.apache.hadoop.ipc.RemoteException.unwrapRemoteException(RemoteException.java:88)
+        at org.apache.hadoop.hdfs.DFSClient.primitiveMkdir(DFSClient.java:2501)
+        at org.apache.hadoop.hdfs.DFSClient.mkdirs(DFSClient.java:2475)
+        at org.apache.hadoop.hdfs.DistributedFileSystem$27.doCall(DistributedFileSystem.java:1484)
+        at org.apache.hadoop.hdfs.DistributedFileSystem$27.doCall(DistributedFileSystem.java:1481)
+        at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+        at org.apache.hadoop.hdfs.DistributedFileSystem.mkdirsInternal(DistributedFileSystem.java:1498)
+        at org.apache.hadoop.hdfs.DistributedFileSystem.mkdirs(DistributedFileSystem.java:1473)
+        at org.apache.hadoop.hive.ql.session.SessionState.createPath(SessionState.java:786)
+        at org.apache.hadoop.hive.ql.session.SessionState.createSessionDirs(SessionState.java:721)
+        at org.apache.hadoop.hive.ql.session.SessionState.start(SessionState.java:627)
+        ... 9 more
+Caused by: org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.hdfs.server.namenode.SafeModeException): Cannot create directory /tmp/hive/root/9fa90604-de49-4543-a9f1-9ee111ff33d6. Name node is in safe mode.
+The reported blocks 155 has reached the threshold 0.9990 of total blocks 155. The minimum number of live datanodes is not required. In safe mode extension. Safe mode will be turned off automatically in 22 seconds. NamenodeHostName:e1c17186afad
+        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1570)
+        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1557)
+        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.mkdirs(FSNamesystem.java:3409)
+        at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.mkdirs(NameNodeRpcServer.java:1170)
+        at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.mkdirs(ClientNamenodeProtocolServerSideTranslatorPB.java:740)
+        at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:600)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:568)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:552)
+        at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1093)
+        at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:1035)
+        at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:963)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at javax.security.auth.Subject.doAs(Subject.java:422)
+        at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1878)
+        at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2966)
+
+        at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1573)
+        at org.apache.hadoop.ipc.Client.call(Client.java:1519)
+        at org.apache.hadoop.ipc.Client.call(Client.java:1416)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:242)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:129)
+        at com.sun.proxy.$Proxy28.mkdirs(Unknown Source)
+        at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.mkdirs(ClientNamenodeProtocolTranslatorPB.java:674)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:422)
+        at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeMethod(RetryInvocationHandler.java:165)
+        at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invoke(RetryInvocationHandler.java:157)
+        at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeOnce(RetryInvocationHandler.java:95)
+        at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:359)
+        at com.sun.proxy.$Proxy29.mkdirs(Unknown Source)
+        at org.apache.hadoop.hdfs.DFSClient.primitiveMkdir(DFSClient.java:2499)
+        ... 18 more
+root@e1c17186afad:/# hive
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/local/apache-hive-3.1.2-bin/lib/log4j-slf4j-impl-2.10.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/local/hadoop-3.3.1/share/hadoop/common/lib/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+Hive Session ID = e24c1f10-76b5-43c0-96ee-948b41096dcc
+
+Logging initialized using configuration in jar:file:/usr/local/apache-hive-3.1.2-bin/lib/hive-common-3.1.2.jar!/hive-log4j2.properties Async: true
+Exception in thread "main" java.lang.RuntimeException: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot create directory /tmp/hive/root/e24c1f10-76b5-43c0-96ee-948b41096dcc. Name node is in safe mode.
+The reported blocks 155 has reached the threshold 0.9990 of total blocks 155. The minimum number of live datanodes is not required. In safe mode extension. Safe mode will be turned off automatically in 3 seconds. NamenodeHostName:e1c17186afad
+        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1570)
+        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1557)
+        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.mkdirs(FSNamesystem.java:3409)
+        at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.mkdirs(NameNodeRpcServer.java:1170)
+        at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.mkdirs(ClientNamenodeProtocolServerSideTranslatorPB.java:740)
+        at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:600)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:568)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:552)
+        at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1093)
+        at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:1035)
+        at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:963)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at javax.security.auth.Subject.doAs(Subject.java:422)
+        at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1878)
+        at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2966)
+
+        at org.apache.hadoop.hive.ql.session.SessionState.start(SessionState.java:651)
+        at org.apache.hadoop.hive.ql.session.SessionState.beginStart(SessionState.java:591)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:747)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:683)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:323)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:236)
+Caused by: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot create directory /tmp/hive/root/e24c1f10-76b5-43c0-96ee-948b41096dcc. Name node is in safe mode.
+The reported blocks 155 has reached the threshold 0.9990 of total blocks 155. The minimum number of live datanodes is not required. In safe mode extension. Safe mode will be turned off automatically in 3 seconds. NamenodeHostName:e1c17186afad
+        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1570)
+        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1557)
+        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.mkdirs(FSNamesystem.java:3409)
+        at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.mkdirs(NameNodeRpcServer.java:1170)
+        at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.mkdirs(ClientNamenodeProtocolServerSideTranslatorPB.java:740)
+        at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:600)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:568)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:552)
+        at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1093)
+        at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:1035)
+        at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:963)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at javax.security.auth.Subject.doAs(Subject.java:422)
+        at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1878)
+        at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2966)
+
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at org.apache.hadoop.ipc.RemoteException.instantiateException(RemoteException.java:121)
+        at org.apache.hadoop.ipc.RemoteException.unwrapRemoteException(RemoteException.java:88)
+        at org.apache.hadoop.hdfs.DFSClient.primitiveMkdir(DFSClient.java:2501)
+        at org.apache.hadoop.hdfs.DFSClient.mkdirs(DFSClient.java:2475)
+        at org.apache.hadoop.hdfs.DistributedFileSystem$27.doCall(DistributedFileSystem.java:1484)
+        at org.apache.hadoop.hdfs.DistributedFileSystem$27.doCall(DistributedFileSystem.java:1481)
+        at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+        at org.apache.hadoop.hdfs.DistributedFileSystem.mkdirsInternal(DistributedFileSystem.java:1498)
+        at org.apache.hadoop.hdfs.DistributedFileSystem.mkdirs(DistributedFileSystem.java:1473)
+        at org.apache.hadoop.hive.ql.session.SessionState.createPath(SessionState.java:786)
+        at org.apache.hadoop.hive.ql.session.SessionState.createSessionDirs(SessionState.java:721)
+        at org.apache.hadoop.hive.ql.session.SessionState.start(SessionState.java:627)
+        ... 9 more
+Caused by: org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.hdfs.server.namenode.SafeModeException): Cannot create directory /tmp/hive/root/e24c1f10-76b5-43c0-96ee-948b41096dcc. Name node is in safe mode.
+The reported blocks 155 has reached the threshold 0.9990 of total blocks 155. The minimum number of live datanodes is not required. In safe mode extension. Safe mode will be turned off automatically in 3 seconds. NamenodeHostName:e1c17186afad
+        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1570)
+        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1557)
+        at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.mkdirs(FSNamesystem.java:3409)
+        at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.mkdirs(NameNodeRpcServer.java:1170)
+        at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.mkdirs(ClientNamenodeProtocolServerSideTranslatorPB.java:740)
+        at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:600)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:568)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine2$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine2.java:552)
+        at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:1093)
+        at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:1035)
+        at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:963)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at javax.security.auth.Subject.doAs(Subject.java:422)
+        at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1878)
+        at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2966)
+
+        at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1573)
+        at org.apache.hadoop.ipc.Client.call(Client.java:1519)
+        at org.apache.hadoop.ipc.Client.call(Client.java:1416)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:242)
+        at org.apache.hadoop.ipc.ProtobufRpcEngine2$Invoker.invoke(ProtobufRpcEngine2.java:129)
+        at com.sun.proxy.$Proxy28.mkdirs(Unknown Source)
+        at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolTranslatorPB.mkdirs(ClientNamenodeProtocolTranslatorPB.java:674)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:422)
+        at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeMethod(RetryInvocationHandler.java:165)
+        at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invoke(RetryInvocationHandler.java:157)
+        at org.apache.hadoop.io.retry.RetryInvocationHandler$Call.invokeOnce(RetryInvocationHandler.java:95)
+        at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:359)
+        at com.sun.proxy.$Proxy29.mkdirs(Unknown Source)
+        at org.apache.hadoop.hdfs.DFSClient.primitiveMkdir(DFSClient.java:2499)
+        ... 18 more
+root@e1c17186afad:/# hive
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/local/apache-hive-3.1.2-bin/lib/log4j-slf4j-impl-2.10.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/local/hadoop-3.3.1/share/hadoop/common/lib/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+Hive Session ID = fb8d8a68-0390-4d9a-8ec3-49f623eba3a7
+
+Logging initialized using configuration in jar:file:/usr/local/apache-hive-3.1.2-bin/lib/hive-common-3.1.2.jar!/hive-log4j2.properties Async: true
+Hive Session ID = f3529d03-ffed-4c80-b337-acdae10e715a
+Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+hive> LOAD DATA LOCAL INPATH '/episodeV_dialouges.txt' INTO TABLE episodeV;
+Loading data to table default.episodev
+OK
+Time taken: 3.511 seconds
+hive> SELECT name, COUNT(name) AS no_of_lines FROM episodeV GROUP BY name ORDER BY no_of_lines;
+Query ID = root_20220331082014_adb44e39-e871-410f-be88-c8b2a9272c85
+Total jobs = 2
+Launching Job 1 out of 2
+Number of reduce tasks not specified. Estimated from input data size: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1648714723445_0001, Tracking URL = http://e1c17186afad:8088/proxy/application_1648714723445_0001/
+Kill Command = /usr/local/hadoop/bin/mapred job  -kill job_1648714723445_0001
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+2022-03-31 08:20:36,380 Stage-1 map = 0%,  reduce = 0%
+2022-03-31 08:20:45,818 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 8.28 sec
+2022-03-31 08:20:53,083 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 12.0 sec
+MapReduce Total cumulative CPU time: 12 seconds 0 msec
+Ended Job = job_1648714723445_0001
+Launching Job 2 out of 2
+Number of reduce tasks determined at compile time: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1648714723445_0002, Tracking URL = http://e1c17186afad:8088/proxy/application_1648714723445_0002/
+Kill Command = /usr/local/hadoop/bin/mapred job  -kill job_1648714723445_0002
+Hadoop job information for Stage-2: number of mappers: 1; number of reducers: 1
+2022-03-31 08:21:09,647 Stage-2 map = 0%,  reduce = 0%
+2022-03-31 08:21:15,871 Stage-2 map = 100%,  reduce = 0%, Cumulative CPU 3.53 sec
+2022-03-31 08:21:23,188 Stage-2 map = 100%,  reduce = 100%, Cumulative CPU 7.32 sec
+MapReduce Total cumulative CPU time: 7 seconds 320 msec
+Ended Job = job_1648714723445_0002
+MapReduce Jobs Launched:
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 12.0 sec   HDFS Read: 61980 HDFS Write: 1614 SUCCESS
+Stage-Stage-2: Map: 1  Reduce: 1   Cumulative CPU: 7.32 sec   HDFS Read: 9130 HDFS Write: 1409 SUCCESS
+Total MapReduce CPU Time Spent: 19 seconds 320 msec
+OK
+FIRST CONTROLLER        1
+WOMAN CONTROLLER        1
+ASSISTANT OFFICER       1
+CAPTAIN 1
+STRANGE VOICE   1
+STAR WARS - EPISODE 5: THE EMPIRE STRIKES BACK  1
+SECOND THREEPIO 1
+SECOND OFFICER  1
+SECOND CONTROLLER       1
+REBEL FIGHTER   1
+REBEL CAPTAIN   1
+PILOTS  1
+PILOT   1
+OFFICER 1
+MAN'S VOICE     1
+        1
+IMPERIAL SOLDIER        1
+HOBBIE  1
+HEAD CONTROLLER 1
+MEDICAL DROID   2
+INTERCOM VOICE  2
+COMMUNICATIONS OFFICER  2
+SENIOR CONTROLLER       2
+IMPERIAL OFFICER        2
+LIEUTENANT      2
+TRACKING OFFICER        2
+DERLIN  3
+CONTROLLER      3
+TRENCH OFFICER  3
+ANNOUNCER       3
+BOBA FETT       4
+BEN'S VOICE     4
+JANSON  4
+DACK    4
+OZZEL   5
+EMPEROR 5
+NEEDA   5
+ZEV     6
+DECK OFFICER    7
+VEERS   7
+WEDGE   8
+BEN     11
+RIEEKAN 13
+CREATURE        21
+PIETT   23
+YODA    36
+VADER   56
+LANDO   61
+THREEPIO        92
+LEIA    114
+LUKE    128
+HAN     182
+Time taken: 71.256 seconds, Fetched: 52 row(s)
+hive> CREATE TABLE episodeVI (name String,line String) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' TBLPROPERTIES("skip.header.count"="2");
+OK
+Time taken: 0.216 seconds
+hive> LOAD DATA LOCAL INPATH '/episodeVI_dialouges.txt' INTO TABLE episodeVI;
+Loading data to table default.episodevi
+OK
+Time taken: 0.232 seconds
+hive> SELECT name, COUNT(name) AS no_of_lines FROM episodeVI GROUP BY name ORDER BY no_of_lines;
+Query ID = root_20220331082304_425b1550-1e96-494b-806c-f672e6cdf9af
+Total jobs = 2
+Launching Job 1 out of 2
+Number of reduce tasks not specified. Estimated from input data size: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1648714723445_0003, Tracking URL = http://e1c17186afad:8088/proxy/application_1648714723445_0003/
+Kill Command = /usr/local/hadoop/bin/mapred job  -kill job_1648714723445_0003
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+2022-03-31 08:23:15,184 Stage-1 map = 0%,  reduce = 0%
+2022-03-31 08:23:29,209 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 9.98 sec
+2022-03-31 08:23:37,634 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 15.51 sec
+MapReduce Total cumulative CPU time: 15 seconds 510 msec
+Ended Job = job_1648714723445_0003
+Launching Job 2 out of 2
+Number of reduce tasks determined at compile time: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1648714723445_0004, Tracking URL = http://e1c17186afad:8088/proxy/application_1648714723445_0004/
+Kill Command = /usr/local/hadoop/bin/mapred job  -kill job_1648714723445_0004
+Hadoop job information for Stage-2: number of mappers: 1; number of reducers: 1
+2022-03-31 08:23:54,754 Stage-2 map = 0%,  reduce = 0%
+2022-03-31 08:24:02,085 Stage-2 map = 100%,  reduce = 0%, Cumulative CPU 3.06 sec
+2022-03-31 08:24:09,315 Stage-2 map = 100%,  reduce = 100%, Cumulative CPU 7.24 sec
+MapReduce Total cumulative CPU time: 7 seconds 240 msec
+Ended Job = job_1648714723445_0004
+MapReduce Jobs Launched:
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 15.51 sec   HDFS Read: 99416 HDFS Write: 4874 SUCCESS
+Stage-Stage-2: Map: 1  Reduce: 1   Cumulative CPU: 7.24 sec   HDFS Read: 12394 HDFS Write: 4333 SUCCESS
+Total MapReduce CPU Time Spent: 22 seconds 750 msec
+OK
+STAR WARS - EPISODE 6: RETURN OF THE JEDI       1
+YODA (tickled, chuckles)        2
+YODA (shakes his head)  2
+YODA (gathering all his strength)       2
+Y-WING PILOT    2
+WEDGE (VO)      2
+WALKER PILOT #1 2
+VOICE (OS)      2
+VADER (turning to face him)     2
+VADER (skeptical)       2
+VADER (indicating lightsaber)   2
+VADER (bows)    2
+VADER (after a beat)    2
+VADER (a whisper)       2
+THREEPIO (to Wicket)    2
+THREEPIO (to Artoo)     2
+THREEPIO (still shaken) 2
+THREEPIO (instantly)    2
+THREEPIO (disappearing) 2
+THREEPIO (cont) 2
+STRANGE VOICE   2
+STORMTROOPER (OS)       2
+SECOND COMMANDER        2
+SCOUT #l        2
+SCOUT #2        2
+SCOUT   2
+RED TWO 2
+RED THREE       2
+RED LEADER (VO) 2
+PILOT VOICE (HAN)(filtered)     2
+PILOT #2        2
+PILOT   2
+PIETT (surprised)       2
+PIETT (into comlink)    2
+OPERATOR        2
+OOLA    2
+OFFICER 2
+NINEDENINE (to a Gamorrean guard)       2
+NAVIGATOR       2
+MON MOTHMA (cont)       2
+LURE    2
+LUKE (with sadness)     2
+LUKE (turning away, derisive)   2
+LUKE (to Leia)  2
+LUKE (shrugging it off) 2
+LUKE (sarcastic)        2
+LUKE (pointing to the controls) 2
+LUKE (moving to his ship)       2
+LUKE (indicating the one ahead) 2
+LUKE (hesitant) 2
+LUKE (groans)   2
+LUKE (cont)     2
+LUKE (concerned)        2
+LEIA (to Han)   2
+LEIA (softly)   2
+LEIA (over comlink)     2
+LEIA (into comlink)     2
+LEIA (alarmed)  2
+LANDO (to himself)      2
+LANDO (smiling) 2
+LANDO (over comlink)    2
+LANDO (into comlink)    2
+LANDO (desperately)     2
+JERJERROD (aghast)      2
+JABBA (cont Huttese subtitled)  2
+HAN/PILOT (VO)  2
+HAN and LUKE    2
+HAN (with self-confident grin)  2
+HAN (whispering to himself)     2
+HAN (turning to Luke)   2
+HAN (to Luke)   2
+HAN (to Leia)   2
+HAN (smiles)    2
+HAN (sighs)     2
+HAN (sarcastic) 2
+HAN (over comlink)      2
+HAN (loses his temper)  2
+HAN (looks at him warmly)       2
+HAN (grins)     2
+HAN (gravely)   2
+HAN (chuckles)  2
+HAN (blinking)  2
+HAN (angry)     2
+HAN (OS)        2
+GREEN LEADER    2
+GRAY LEADER     2
+EMPEROR (very cool)     2
+EMPEROR (to Vader)      2
+EMPEROR (to Luke)       2
+EMPEROR (no surprise)   2
+EMPEROR (laughs)        2
+EMPEROR (laughing)      2
+EMPEROR (cont)  2
+EMPEROR (angry) 2
+DEATH STAR CONTROLLER(filtered VO)      2
+CONTROLLER (filtered)   2
+CONTROL ROOM COMMANDER  2
+BUNKER COMMANDER        2
+BIB (in Huttese subtitled)      2
+BEN (grinning at Luke's indignation)    2
+BEN (continuing his narrative)  2
+BEN (attempting to give solace with his words)  2
+BEN (OS)        2
+ANAKIN (very weak)      2
+ANAKIN  2
+ACKBAR (cont)   2
+        2
+SCOUT #1        4
+BOUSHH (in Ubese subtitled)     4
+ACKBAR (VO)     4
+MON MOTHMA      4
+GUARD   4
+CONTROLLER      4
+SHUTTLE CAPTAIN 4
+GENERAL MADINE  4
+CONTROLLER (over radio) 4
+HAN (cont)      6
+REBEL PILOT     6
+JABBA   8
+BIB     10
+BOUSHH  10
+NINEDENINE      10
+STORMTROOPER    10
+PIETT   12
+JERJERROD       12
+COMMANDER       14
+YODA    20
+WEDGE   20
+ACKBAR  22
+BEN     28
+JABBA (in Huttese subtitled)    30
+EMPEROR 62
+LANDO   70
+VADER   74
+LEIA    102
+THREEPIO        168
+LUKE    200
+HAN     208
+Time taken: 66.18 seconds, Fetched: 138 row(s)
+hive> SELECT COUNT(*) FROM episodeV WHERE INSTR (line, 'Luke')>0;
+Query ID = root_20220331082536_9c2764f3-215e-47f8-8531-b3afcb505985
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks determined at compile time: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1648714723445_0005, Tracking URL = http://e1c17186afad:8088/proxy/application_1648714723445_0005/
+Kill Command = /usr/local/hadoop/bin/mapred job  -kill job_1648714723445_0005
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+2022-03-31 08:25:48,513 Stage-1 map = 0%,  reduce = 0%
+2022-03-31 08:25:56,785 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 8.31 sec
+2022-03-31 08:26:05,016 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 13.53 sec
+MapReduce Total cumulative CPU time: 13 seconds 530 msec
+Ended Job = job_1648714723445_0005
+MapReduce Jobs Launched:
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 13.53 sec   HDFS Read: 64115 HDFS Write: 102 SUCCESS
+Total MapReduce CPU Time Spent: 13 seconds 530 msec
+OK
+30
+Time taken: 29.244 seconds, Fetched: 1 row(s)
+hive>
