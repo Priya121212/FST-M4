@@ -1,0 +1,22 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\0686C6744> docker exec -it e1c17186afad bash
+root@e1c17186afad:/# vim txtFile.txt
+root@e1c17186afad:/# vim csvFile.csv
+root@e1c17186afad:/# hdfs dfs -mkdir /user/root/textData
+root@e1c17186afad:/# hdfs dfs -put ./csvFile.csv /user/root/textData
+root@e1c17186afad:/# hdfs dfs -put ./csvFile.csv /user/root/textData
+put: `/user/root/textData/csvFile.csv': File exists
+root@e1c17186afad:/# dfs dfs -stat "type:%F permissions:%a %u:%g size:%b name:%n" /user/root/textData/csvFile.csv
+bash: dfs: command not found
+root@e1c17186afad:/# hdfs dfs -stat "type:%F permissions:%a %u:%g size:%b name:%n" /user/root/textData/csvFile.csv
+type:regular file permissions:644 root:supergroup size:509 name:csvFile.csv
+root@e1c17186afad:/# hdfs dfs -stat "type:%F permissions:%a %u:%g size:%b name:%n" /user/root/textData/txtFile.txt
+stat: `/user/root/textData/txtFile.txt': No such file or directory
+root@e1c17186afad:/# hdfs dfs -put ./txtFile.txt /user/root/textData
+root@e1c17186afad:/# hdfs dfs -stat "type:%F permissions:%a %u:%g size:%b name:%n" /user/root/textData/txtFile.txt
+type:regular file permissions:644 root:supergroup size:155 name:txtFile.txt
+root@e1c17186afad:/#

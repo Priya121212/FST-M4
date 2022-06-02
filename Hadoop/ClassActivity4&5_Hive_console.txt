@@ -1,0 +1,43 @@
+hive> SELECT * FROM employee;
+OK
+1       Ian     Quality Assurance       2021    28113
+2       Beatrice        Tech Support    2021    35330
+3       Vladimir        Human Resources 2020    51445
+4       Whitney IT      2020    23818
+5       Leslie  Customer Service        2021    59882
+6       Bernard IT      2021    50330
+7       Mary    Customer Service        2021    26558
+8       Jerome  RnD     2021    45333
+9       Joshua  IT      2021    59538
+10      Keane   Human Resources 2022    46500
+11      Velma   Human Resources 2022    19816
+12      Rogan   Tech Support    2022    27554
+13      Aurelia RnD     2021    20762
+14      Merrill Quality Assurance       2021    59660
+15      Blaine  Tech Support    2022    28768
+Time taken: 1.881 seconds, Fetched: 15 row(s)
+hive> SELECT COUNT(*) FROM employee;
+Query ID = root_20220325035525_045d093e-6db9-459f-a1a2-e8670322d2ff
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks determined at compile time: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1648180002926_0001, Tracking URL = http://e1c17186afad:8088/proxy/application_1648180002926_0001/
+Kill Command = /usr/local/hadoop/bin/mapred job  -kill job_1648180002926_0001
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+2022-03-25 03:55:45,969 Stage-1 map = 0%,  reduce = 0%
+2022-03-25 03:56:00,699 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 8.82 sec
+2022-03-25 03:56:08,013 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 13.42 sec
+MapReduce Total cumulative CPU time: 13 seconds 420 msec
+Ended Job = job_1648180002926_0001
+MapReduce Jobs Launched:
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 13.42 sec   HDFS Read: 13152 HDFS Write: 102 SUCCESS
+Total MapReduce CPU Time Spent: 13 seconds 420 msec
+OK
+15
+Time taken: 44.339 seconds, Fetched: 1 row(s)

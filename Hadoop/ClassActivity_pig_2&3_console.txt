@@ -1,0 +1,16 @@
+root@e1c17186afad:/# hdfs dfs -cat /user/root/results/part-r-00000
+Bye     1
+Hello   1
+World   2
+        0
+		
+		
+		
+root@e1c17186afad:/# hdfs dfs -cat /user/root/salesOutput/part-r-00000
+France:1
+Israel:1
+Country:1
+Australia:1
+Netherlands:1
+United States:9
+United Kingdom:1
